@@ -1,5 +1,6 @@
 import logo from '../logo.svg';
 import '../App.css'
+import CartWidget from './CartWidget.js';
 
 
 function NavBar() {
@@ -9,9 +10,10 @@ function NavBar() {
         <img src={logo} className="logo"/>
         <ul className="menu">
             <button className="menu__opciones">Inicio</button>
-            <button className="menu__opciones" id="opciones__productos">Productos</button>
+            <button className="menu__opciones">Productos</button>
             <button className="menu__opciones" >Contacto</button>
         </ul>
+        <CartWidget/>
     </div>
   );
 }
