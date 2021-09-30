@@ -26,8 +26,6 @@ const ItemCount = ({stock, inicial})=>{
 
     return(
         <div className="containerContador">
-            <p>Contador</p>
-            <p>Stock: {stockRestante}</p>
             <div className="containerContador__control">
                 <div onClick={restarCont}>
                     <p>-</p>

@@ -1,0 +1,34 @@
+[
+    {
+        "id":1, 
+        "nombre": "producto01",
+        "descripcion": "descripcion del producto01",
+        "precio":145,
+        "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
+        "stock":20
+    },
+    {
+        "id":2, 
+        "nombre": "producto02",
+        "descripcion": "descripcion del producto02",
+        "precio":200,
+        "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
+        "stock":13
+    },
+    {
+        "id":3, 
+        "nombre": "producto03",
+        "descripcion": "descripcion del producto03",
+        "precio":124,
+        "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
+        "stock":4
+    },
+    {
+        "id":4, 
+        "nombre": "producto04",
+        "descripcion": "descripcion del producto04",
+        "precio":113,
+        "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
+        "stock":26
+    }
+]
