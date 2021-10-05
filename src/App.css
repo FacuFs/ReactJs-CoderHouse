@@ -114,8 +114,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 200px;
+  width: 100%;
   text-align: center;
   margin: 20px;
   background-color: rgb(223, 240, 255);
 }
+.item{
+  margin: 40px;
+}
+
+

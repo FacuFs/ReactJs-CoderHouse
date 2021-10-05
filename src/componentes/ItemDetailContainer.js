@@ -1,9 +1,9 @@
-import ItemList from "./ItemList";
+import react, { useState, useEffect } from "react";
+import ItemDetail from "./ItemDetail";
 import products from "./data/data.json";
-import react, { useEffect, useState } from "react";
 
-const ItemListContainer = () => {
-  const [productos, setProductos] = useState(0);
+const ItemDetailContainer = () => {
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
     const productData = new Promise((resolve, reject) => {
@@ -17,9 +17,9 @@ const ItemListContainer = () => {
     });
   });
   return (
-    <div className="itemContainer">
-      <ItemList items={productos} />
-    </div>
+    <>
+      <ItemDetail items={productos} />
+    </>
   );
 };
-export default ItemListContainer;
+export default ItemDetailContainer;

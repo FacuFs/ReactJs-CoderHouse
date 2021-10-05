@@ -3,15 +3,16 @@ import './App.css';
 import NavBar from './componentes/NavBar.js';
 import ItemListContainer from "./componentes/ItemListContainer.js"
 import ItemCount from "./componentes/ItemCount"
+import ItemDetailContainer from './componentes/ItemDetailContainer';
 
 function App() {
-  const stock=10;
+
   return (
 
     <div className="App">
       <NavBar/>
       <ItemListContainer titulo="Nuestros productos"/>
-      
+      <ItemDetailContainer titulo="details"/>
     </div>
   );
 }
