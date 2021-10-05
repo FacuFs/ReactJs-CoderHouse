@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <ItemListContainer titulo="Nuestros productos"/>
-      <ItemDetailContainer titulo="details"/>
+     
     </div>
   );
 }
