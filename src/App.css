@@ -1,4 +1,7 @@
-
+*{
+  margin: 0;
+  padding: 0;
+}
 
 .navBar{
   height: 80px;
@@ -34,6 +37,9 @@
   border-radius: 5px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: small;
   
 }
 
@@ -116,11 +122,9 @@
   justify-content: center;
   width: 100%;
   text-align: center;
-  margin: 20px;
+  margin: 0;
   background-color: rgb(223, 240, 255);
 }
 .item{
   margin: 40px;
 }
-
-

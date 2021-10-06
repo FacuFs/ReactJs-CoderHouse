@@ -5,9 +5,9 @@ const ItemList = ({items}) =>{
     return(
         <>
         {items.length ? (
-            items.map((e)=> <Item item={e}/>)
+            items.map((producto)=> <Item item={producto} key={producto.id}/>)
         ) : (
-            <p>no encontrado</p>
+            <p>Cargando...</p>
         )}
         </>
     )

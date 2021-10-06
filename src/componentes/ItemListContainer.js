@@ -1,21 +1,32 @@
 import ItemList from "./ItemList";
 import products from "./data/data.json";
 import react, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState(0);
+  const { id: idCategory } = useParams();
 
-  useEffect(() => {
-    const productData = new Promise((resolve, reject) => {
+  const getItem = () => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(products);
+        if (idCategory) {
+          const filtroCategory = products.filter(
+            (item) => item.categoria === idCategory
+          );
+          resolve(filtroCategory);
+        } else {
+          resolve(products);
+        }
+        reject("error");
       }, 2000);
     });
+  };
 
-    productData.then((res) => {
-      setProductos(res);
-    });
-  });
+  useEffect(() => {
+    setProductos([]);
+    getItem().then((res) => setProductos(res));
+  }, [idCategory]);
   return (
     <div className="itemContainer">
       <ItemList items={productos} />

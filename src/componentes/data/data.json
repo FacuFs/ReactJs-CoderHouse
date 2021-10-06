@@ -5,7 +5,8 @@
         "descripcion": "descripcion del producto01",
         "precio":145,
         "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
-        "stock":20
+        "stock":20,
+        "categoria":"1"
     },
     {
         "id":2, 
@@ -13,7 +14,8 @@
         "descripcion": "descripcion del producto02",
         "precio":200,
         "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
-        "stock":13
+        "stock":13,
+        "categoria":"1"
     },
     {
         "id":3, 
@@ -21,7 +23,8 @@
         "descripcion": "descripcion del producto03",
         "precio":124,
         "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
-        "stock":4
+        "stock":4,
+        "categoria":"3"
     },
     {
         "id":4, 
@@ -29,6 +32,7 @@
         "descripcion": "descripcion del producto04",
         "precio":113,
         "img":"http://dummyimage.com/200x200.png/5fa2dd/ffffff",
-        "stock":26
+        "stock":26,
+        "categoria":"2"
     }
 ]
