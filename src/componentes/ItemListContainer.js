@@ -22,7 +22,7 @@ const ItemListContainer = () => {
       }, 2000);
     });
   };
-
+  console.log(productos)
   useEffect(() => {
     setProductos([]);
     getItem().then((res) => setProductos(res));

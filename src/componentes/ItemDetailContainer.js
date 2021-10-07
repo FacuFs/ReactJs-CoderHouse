@@ -8,16 +8,17 @@ const ItemDetailContainer = () => {
   const {itemId} = useParams();
   const getItems = () => {
       return new Promise((resolve, reject) => {
-          const product = products.filter(product => product.id === itemId)[0];
+          const product = products.filter(p=> p.id === itemId);
           if (product) {
               resolve(product)
-          }
-          reject("No existe el producto")
+          }else{
+           reject("No existe el producto")
+        }
       })
   }
   useEffect(() => {
-      return getItems().then((data) => {
-          setItem(data)
+      return getItems().then((res) => {
+          setItem(res)
       }).catch((err) => {
           console.log(err)
       })

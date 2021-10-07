@@ -5,7 +5,7 @@ import products from "./data/data.json"
 const ItemDetail = ({ item }) => {
   console.log(item)
   return (
-    <>
+    <> 
     {item ? (<div className="itemDetailContainer">
       <div className="itemDetail">
         <h4>{item.nombre}</h4>
