@@ -3,6 +3,7 @@ import ItemDetailContainer from "./ItemDetailContainer";
 import products from "./data/data.json"
 
 const ItemDetail = ({ item }) => {
+  console.log(item)
   return (
     <>
     {item ? (<div className="itemDetailContainer">
@@ -12,7 +13,6 @@ const ItemDetail = ({ item }) => {
         <p>{item.descripcion}</p>
         <p>Stock disponible: {item.stock}</p>
         <p>${item.precio}</p>
-        <button>Detalles del producto</button>
         <ItemCount stock={item.stock} inicial="1" />
       </div>
     </div>) : (<p>cargando...</p>)
