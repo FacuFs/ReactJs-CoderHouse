@@ -4,25 +4,27 @@ import react, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState({});
-  const {itemId} = useParams();
+const [item, setItem] = useState({});
+  const { id } = useParams();
   const getItems = () => {
-      return new Promise((resolve, reject) => {
-          const product = products.filter(p=> p.id === itemId);
-          if (product) {
-              resolve(product)
-          }else{
-           reject("No existe el producto")
-        }
-      })
-  }
+    return new Promise((resolve, reject) => {
+      const product = products.filter((product) => product.id == id)[0];
+      if (product) {
+        resolve(product);
+      } else {
+        reject("No existe el producto");
+      }
+    });
+  };
   useEffect(() => {
-      return getItems().then((res) => {
-          setItem(res)
-      }).catch((err) => {
-          console.log(err)
+    return getItems()
+      .then((res) => {
+        setItem(res);
       })
-  }, [itemId])
-  return <ItemDetail item={item}/>
-}
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
+  return <ItemDetail item={item} />;
+};
 export default ItemDetailContainer;

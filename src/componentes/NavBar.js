@@ -1,9 +1,7 @@
 import logo from "../logo.svg";
 import "../App.css";
 import CartWidget from "./CartWidget.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ItemDetailContainer from "./ItemDetailContainer";
-import ItemListContainer from "./ItemListContainer";
+import { Link } from "react-router-dom";
 
 function NavBar() {
 
@@ -14,7 +12,7 @@ function NavBar() {
         
         <img src={logo} className="logo" />
         <ul className="menu">
-          <Link to="/ItemListContainer" className="menu__opciones">
+          <Link to="/" className="menu__opciones">
             Inicio
           </Link>
           <Link to="/categoria/1" className="menu__opciones">

@@ -1,6 +1,6 @@
 import ItemCount from "./ItemCount";
-import ItemDetailContainer from "./ItemDetailContainer";
-import products from "./data/data.json"
+
+
 
 const ItemDetail = ({ item }) => {
   console.log(item)

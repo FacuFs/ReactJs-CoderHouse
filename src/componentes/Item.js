@@ -1,5 +1,3 @@
-import ItemDetail from "./ItemDetail";
-import ItemDetailContainer from "./ItemDetailContainer";
 import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
