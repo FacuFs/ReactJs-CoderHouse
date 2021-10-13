@@ -1,45 +1,58 @@
+import { Link } from "react-router-dom";
+
 const { useState } = require("react")
 
 
 const ItemCount = ({stock, inicial})=>{
     const [contador, setContador]=useState(inicial);
     const [stockRestante, setStock]= useState(stock)
-    
+    const [isEstado, setEstado] = useState(true);
+
     const sumarCont = ()=>{
-        if (contador<stockRestante) {
+        if (contador<stock) {
             setContador(parseInt(contador)+1);
         }
     }
     const restarCont = ()=>{
-        if (contador>1) {
+        if (contador>inicial) {
             setContador(contador-1);
         }
     }
-
-    const comprar =()=>{
-        setStock(parseInt(stockRestante)-contador)
-        alert('Usted a comprado '+contador+' unidades del producto');
+    const onAdd = (e, input) => {
+        e.preventDefault();
+        //console.log(input.value)
+        setEstado()
+        console.log("agrega Item al carro");
     }
+
 
 
 
 
     return(
-        <div className="containerContador">
-            <div className="containerContador__control">
-                <div onClick={restarCont}>
-                    <p>-</p>
-                </div>
-                <div className="contador">
-                    <p> {contador}</p>
-                </div>
-                <div onClick={sumarCont}>
-                    <p>+</p>
-                </div>
-            </div>
-            <button onClick={comprar}>Agregar al carrito</button>
+        <>
 
-        </div>
+        {isEstado ?
+            <div className="containerContador">
+                <div className="containerContador__control">
+                    <div onClick={restarCont}>
+                        <p>-</p>
+                    </div>
+                    <div className="contador">
+                        <p> {contador}</p>
+                    </div>
+                    <div onClick={sumarCont}>
+                        <p>+</p>
+                    </div>
+                </div>
+                <button onClick={onAdd}>Agregar al carrito</button>
+            </div>
+            :
+            <div>
+                <Link to="/Cart">Ir al carrito</Link>
+            </div>
+        }
+        </>
     )
 }
 

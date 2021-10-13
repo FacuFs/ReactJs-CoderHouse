@@ -9,8 +9,9 @@ function NavBar() {
 
   return (
       <div className="navBar">
-        
+
         <img src={logo} className="logo" />
+
         <ul className="menu">
           <Link to="/" className="menu__opciones">
             Inicio

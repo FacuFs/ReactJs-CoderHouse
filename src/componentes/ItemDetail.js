@@ -3,7 +3,9 @@ import ItemCount from "./ItemCount";
 
 
 const ItemDetail = ({ item }) => {
-  console.log(item)
+  
+  
+
   return (
     <> 
     {item ? (<div className="itemDetailContainer">
