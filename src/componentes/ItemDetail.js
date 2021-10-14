@@ -1,10 +1,13 @@
 import ItemCount from "./ItemCount";
-
+import { CartContextUse } from "./context/CartContext";
 
 
 const ItemDetail = ({ item }) => {
-  
-  
+  const {addItem} = CartContextUse();
+
+  const onAdd = (cant) =>{
+    addItem(item, cant)
+  }
 
   return (
     <> 
@@ -15,7 +18,7 @@ const ItemDetail = ({ item }) => {
         <p>{item.descripcion}</p>
         <p>Stock disponible: {item.stock}</p>
         <p>${item.precio}</p>
-        <ItemCount stock={item.stock} inicial="1" />
+        <ItemCount stock={item.stock} inicial="1" onAdd={onAdd}/>
       </div>
     </div>) : (<p>cargando...</p>)
     }

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-
 const { useState } = require("react")
 
 
-const ItemCount = ({stock, inicial})=>{
+const ItemCount = ({stock, inicial, onAdd})=>{
     const [contador, setContador]=useState(inicial);
     const [stockRestante, setStock]= useState(stock)
     const [isEstado, setEstado] = useState(true);
@@ -18,8 +17,7 @@ const ItemCount = ({stock, inicial})=>{
             setContador(contador-1);
         }
     }
-    const onAdd = (e, input) => {
-        e.preventDefault();
+    const compra = () => {
         //console.log(input.value)
         setEstado()
         console.log("agrega Item al carro");
@@ -45,7 +43,7 @@ const ItemCount = ({stock, inicial})=>{
                         <p>+</p>
                     </div>
                 </div>
-                <button onClick={onAdd}>Agregar al carrito</button>
+                <button onClick={compra} onClick={()=> onAdd(contador)}>Agregar al carrito</button>
             </div>
             :
             <div>
