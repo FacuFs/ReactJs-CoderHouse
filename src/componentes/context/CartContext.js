@@ -26,12 +26,19 @@ export const CartContextProvider = ({children}) =>{
         
     }
 
-    const isInCart = (id) => cart.find(i => i.item.id)
+    const isInCart = (id) => cart.find(i => i.item.id);
+
+    const clearCart = () => setCart([]);
+
+    const removeItem = (id) =>{
+        const cartFilter = cart.filter(i => i.item.id !== id)
+        setCart(cartFilter);
+    }
 
     console.log('carrito', cart);
 
     return(
-        <CartContext.Provider value={{cart, addItem}}>
+        <CartContext.Provider value={{cart, addItem, clearCart, removeItem}}>
             {children}
         </CartContext.Provider>
         
