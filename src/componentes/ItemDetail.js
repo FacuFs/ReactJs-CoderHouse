@@ -6,7 +6,8 @@ const ItemDetail = ({ item }) => {
   const {addItem, clearCart, removeItem} = CartContextUse();
 
   const onAdd = (cant) =>{
-    addItem(item, cant)
+    addItem(item, parseInt(cant))
+
   }
 
   return (
@@ -19,7 +20,7 @@ const ItemDetail = ({ item }) => {
         <p>Stock disponible: {item.stock}</p>
         <p>${item.precio}</p>
         <ItemCount stock={item.stock} inicial="1" onAdd={onAdd}/>
-        <button onClick={removeItem}>Borrar este producto del carrito</button>
+        
         <button onClick={clearCart}>Borrar todo el carrito</button>
       </div>
     </div>) : (<p>cargando...</p>)

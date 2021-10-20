@@ -6,41 +6,45 @@ export const CartContextUse = () => {
     return useContext(CartContext)
 }
 
-export const CartContextProvider = ({children}) =>{
+export const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
+    const [carritoVacio, setCarritoVacio] = useState(true)
 
-
-    const addItem = (item, cantidad) =>{
+    const addItem = (item, cantidad) => {
+        setCarritoVacio(false);
         if (isInCart(item.id)) {
             const cantAct = [...cart];
 
-            cantAct.map(i =>{
-                if (i.item.id === item.id) {
+            cantAct.map(i => {
+                if (i.item.id == item.id) {
                     i.cantidad += cantidad;
                 }
             })
             setCart(cantAct)
         } else {
-            setCart([...cart, {item, cantidad}])
+            setCart([...cart, { item, cantidad }])
         }
-        
+
     }
 
-    const isInCart = (id) => cart.find(i => i.item.id);
+    const isInCart = (id) => cart.find(i => i.item.id == id);
 
-    const clearCart = () => setCart([]);
+    const clearCart = () =>{
+        setCart([]);
+        setCarritoVacio(true);
+    }
 
-    const removeItem = (id) =>{
+    const removeItem = (id) => {
         const cartFilter = cart.filter(i => i.item.id !== id)
         setCart(cartFilter);
     }
 
     console.log('carrito', cart);
 
-    return(
-        <CartContext.Provider value={{cart, addItem, clearCart, removeItem}}>
+    return (
+        <CartContext.Provider value={{ carritoVacio, cart, addItem, clearCart, removeItem }}>
             {children}
         </CartContext.Provider>
-        
-        )
+
+    )
 }
