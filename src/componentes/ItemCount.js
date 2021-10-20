@@ -5,7 +5,7 @@ const { useState } = require("react")
 const ItemCount = ({stock, inicial, onAdd})=>{
     const [contador, setContador]=useState(inicial);
     const [stockRestante, setStock]= useState(stock)
-    const [isEstado, setEstado] = useState(true);
+    
 
     const sumarCont = ()=>{
         if (contador<stock) {
@@ -19,7 +19,7 @@ const ItemCount = ({stock, inicial, onAdd})=>{
     }
     const compra = () => {
         //console.log(input.value)
-        setEstado()
+  
         console.log("agrega Item al carro");
     }
 
@@ -30,7 +30,7 @@ const ItemCount = ({stock, inicial, onAdd})=>{
     return(
         <>
 
-        {isEstado ?
+        
             <div className="containerContador">
                 <div className="containerContador__control">
                     <div onClick={restarCont}>
@@ -45,11 +45,9 @@ const ItemCount = ({stock, inicial, onAdd})=>{
                 </div>
                 <button onClick={compra} onClick={()=> onAdd(contador)}>Agregar al carrito</button>
             </div>
-            :
-            <div>
-                <Link to="/Cart">Ir al carrito</Link>
-            </div>
-        }
+            
+          
+        
         </>
     )
 }

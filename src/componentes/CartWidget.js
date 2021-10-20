@@ -1,25 +1,26 @@
+import react from "react";
 import carrito from "../carrito.svg"
 import "../App.css"
 import { Link } from "react-router-dom";
 import { CartContextUse } from "./context/CartContext";
 import { useState } from "react";
 
-const CartWidget = () =>{
+const CartWidget = () => {
 
     const { carritoVacio, cart, clearCart, removeItem } = CartContextUse();
-    let unidadesCart= 0;
+    let unidadesCart = 0;
 
-    cart.map(element=>{
+    cart.map(element => {
         unidadesCart += element.cantidad
     })
 
-    const carritoLogo= <img src={carrito} className="logoCarrito"/>
-    return(
+    const carritoLogo = <img src={carrito} className="logoCarrito" />
+    return (
         <div className="botonCarrito">
             <Link to="/Cart">
-            {carritoLogo}
+                {carritoLogo}
             </Link>
-            {unidadesCart}
+            <p>{unidadesCart}</p>
         </div>
     )
 }

@@ -1,18 +1,21 @@
+import { useState } from "react";
 import ItemCount from "./ItemCount";
 import { CartContextUse } from "./context/CartContext";
+import { Link } from "react-router-dom";
 
 
 const ItemDetail = ({ item }) => {
   const {addItem, clearCart, removeItem} = CartContextUse();
+  const [isEstado, setEstado] = useState(true);
 
   const onAdd = (cant) =>{
     addItem(item, parseInt(cant))
-
+    setEstado()
   }
 
   return (
     <> 
-    {item ? (<div className="itemDetailContainer">
+    {isEstado ? (<div className="itemDetailContainer">
       <div className="itemDetail">
         <h4>{item.nombre}</h4>
         <img src={item.img} className="item__img"></img>
@@ -20,10 +23,13 @@ const ItemDetail = ({ item }) => {
         <p>Stock disponible: {item.stock}</p>
         <p>${item.precio}</p>
         <ItemCount stock={item.stock} inicial="1" onAdd={onAdd}/>
-        
-        <button onClick={clearCart}>Borrar todo el carrito</button>
       </div>
-    </div>) : (<p>cargando...</p>)
+    </div>) 
+    :
+    <div>
+     <Link to="/Cart"> ||Ir al carrito|| </Link>
+     <Link to="/"> ||SEGUIR COMPRANDO|| </Link>
+    </div>
     }
 
   </>
