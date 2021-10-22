@@ -1,5 +1,5 @@
 import ItemList from "./ItemList";
-import products from "./data/data.json";
+import { getFirestore } from "../firebase/index";
 import react, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
@@ -7,25 +7,22 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([0]);
   const { id: idCategory } = useParams();
 
-  const getItem = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (idCategory) {
-          const filtroCategory = products.filter(
-            (item) => item.categoria === idCategory
-          );
-          resolve(filtroCategory);
-        } else {
-          resolve(products);
-        }
-        reject("error");
-      }, 2000);
-    });
-  };
-  console.log(productos)
+const getBaseDatos = () =>{
+  const bd = getFirestore();
+  const itemCollection = bd.collection('productos');
+  itemCollection.get().then((infoBaseDatos) => {
+    if (infoBaseDatos.size === 0) {
+      console.log('no hay datos');
+    }
+    setProductos(infoBaseDatos.docs.map(doc =>{
+      return {id: doc.id, ...doc.data()}
+    }))
+  }).catch((error) =>{
+    console.error('Error al traer los datos', error)
+  })
+}
   useEffect(() => {
-    setProductos([]);
-    getItem().then((res) => setProductos(res));
+    getBaseDatos();
   }, [idCategory]);
   return (
     <div className="itemContainer">

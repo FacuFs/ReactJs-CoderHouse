@@ -6,6 +6,8 @@ import ItemListContainer from "./componentes/ItemListContainer.js";
 import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import { CartContextProvider } from "./componentes/context/CartContext";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import './firebase/index'
+
 
 function App() {
   return (

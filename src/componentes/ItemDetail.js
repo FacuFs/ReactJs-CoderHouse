@@ -26,10 +26,21 @@ const ItemDetail = ({ item }) => {
       </div>
     </div>) 
     :
-    <div>
-     <Link to="/Cart"> ||Ir al carrito|| </Link>
-     <Link to="/"> ||SEGUIR COMPRANDO|| </Link>
+    <>
+    <div className="itemDetailContainer">
+      <div className="itemDetail">
+        <h4>{item.nombre}</h4>
+        <img src={item.img} className="item__img"></img>
+        <p>{item.descripcion}</p>
+        <p>Stock disponible: {item.stock}</p>
+        <p>${item.precio}</p>
+      </div>
     </div>
+     <Link to="/Cart"><button>Ir al carrito</button></Link>
+     <Link to="/"><button>SEGUIR COMPRANDO</button></Link>
+
+     </>
+    
     }
 
   </>
