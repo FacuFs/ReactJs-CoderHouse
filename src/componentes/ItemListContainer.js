@@ -21,8 +21,23 @@ const getBaseDatos = () =>{
     console.error('Error al traer los datos', error)
   })
 }
+
+const filtro = () =>{
+  const bd = getFirestore();
+  const categoriaProducto = bd.collection('productos').where('categoria', '==' , idCategory);
+  categoriaProducto.get().then((infoBaseDatos) =>{
+    const catProduct = infoBaseDatos.docs.map (p =>{
+      return {...p.data(), id: p.id}
+    })
+    setProductos(catProduct)
+  })
+}
   useEffect(() => {
+    if (idCategory) {
+      filtro();
+    }else{
     getBaseDatos();
+    }
   }, [idCategory]);
   return (
     <div className="itemContainer">
