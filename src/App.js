@@ -5,6 +5,7 @@ import Cart from "./componentes/Cart";
 import ItemListContainer from "./componentes/ItemListContainer.js";
 import ItemDetailContainer from "./componentes/ItemDetailContainer";
 import { CartContextProvider } from "./componentes/context/CartContext";
+import Form from "./componentes/Form";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './firebase/index'
 
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route exact path="/Cart">
               <Cart />
+            </Route>
+            <Route exact path="/Form">
+              <Form />
             </Route>
           </Switch>
         </Router>
