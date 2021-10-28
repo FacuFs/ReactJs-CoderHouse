@@ -5,9 +5,7 @@ import { CartContextUse } from "./context/CartContext";
 
 
 const Cart = () => {
-    const { carritoVacio, cart, clearCart, removeItem } = CartContextUse();
-    let precioTotal = 0;
-
+    const { carritoVacio, cart, clearCart, removeItem, totalPrice} = CartContextUse();
 
     return (
         <>
@@ -23,7 +21,7 @@ const Cart = () => {
                     <ul>
                         {cart.map(element => {
                             let precioProd = element.item.precio * element.cantidad;
-                            precioTotal += precioProd;
+                            
 
                             return (
                                 <li key={element.item.id}>
@@ -31,11 +29,12 @@ const Cart = () => {
                                 </li>
                             )
                         })}
-                    </ul>
+                    </ul>   
+                    
 
                     <button onClick={clearCart}>Vaciar Carrito</button>
 
-                    <h3>TOTAL: ${precioTotal}</h3>
+                    <h3>TOTAL: ${totalPrice}</h3>
 
                     <Link to='/Form'>Finalizar compra</Link>
                 </>
