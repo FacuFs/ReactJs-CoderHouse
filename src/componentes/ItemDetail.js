@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../App.css";
 import ItemCount from "./ItemCount";
 import { CartContextUse } from "./context/CartContext";
 import { Link } from "react-router-dom";
@@ -19,9 +20,11 @@ const ItemDetail = ({ item }) => {
       <div className="itemDetail">
         <h4>{item.nombre}</h4>
         <img src={item.img} className="item__img"></img>
-        <p>{item.descripcion}</p>
-        <p>Stock disponible: {item.stock}</p>
-        <p>${item.precio}</p>
+        <span>
+          <p>{item.descripcion}</p>
+          <p>Stock disponible: {item.stock}</p>
+          <p>${item.precio}</p>
+        </span>
         <ItemCount stock={item.stock} inicial="1" onAdd={onAdd}/>
       </div>
     </div>) 
@@ -31,13 +34,17 @@ const ItemDetail = ({ item }) => {
       <div className="itemDetail">
         <h4>{item.nombre}</h4>
         <img src={item.img} className="item__img"></img>
-        <p>{item.descripcion}</p>
-        <p>Stock disponible: {item.stock}</p>
-        <p>${item.precio}</p>
+        <span>
+          <p>{item.descripcion}</p>
+          <p>Stock disponible: {item.stock}</p>
+          <p>${item.precio}</p>
+        </span>
+        <Link to="/Cart"className="btnDetalles">Ir al carrito</Link>
+        <Link to="/" className="btnDetalles">SEGUIR COMPRANDO</Link>
       </div>
+      
     </div>
-     <Link to="/Cart"><button>Ir al carrito</button></Link>
-     <Link to="/"><button>SEGUIR COMPRANDO</button></Link>
+     
 
      </>
     

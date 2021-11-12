@@ -127,4 +127,86 @@
 }
 .item{
   margin: 40px;
+
+  border: solid 1px;
+  
+}
+
+.item__img{
+  width: 250px;
+  border-radius: 5px;
+  border: solid 1px;
+  margin: 6px 10px;
+}
+
+.item h4{
+  margin: 5px 0;
+}
+
+.item p{
+  line-height: 30px;
+}
+
+.btnDetalles{
+  text-decoration: none;
+  line-height: 30px;
+  border: solid 1px;
+  border-radius: 5px;
+  color: #0093E9;
+  margin: 0 10px;
+}
+
+.itemDetailContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.itemDetail{
+  border: solid 1px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: rgb(223, 240, 255);
+}
+
+.itemDetail span {
+  line-height: 40px;
+  margin: 0 15px;
+}
+
+.cartContainer{
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.listaCart{
+  list-style: none;
+
+}
+
+.listaCart li{
+  border: solid 1px;
+   
+  margin: 5px;
+  padding: 5px;
+}
+
+.containerForm{
+  display: flex;
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.containerForm input{
+  margin: 30px;
+  height: 35px;
+  border: solid 3px #0093E9;;
+  border-radius: 3px;
 }

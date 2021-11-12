@@ -16,11 +16,11 @@ function NavBar() {
           <Link to="/" className="menu__opciones">
             Inicio
           </Link>
-          <Link to="/categoria/1" className="menu__opciones">
-            Categoria 1
+          <Link to="/categoria/velas" className="menu__opciones">
+            Velas
           </Link>
-          <Link to="/categoria/2" className="menu__opciones">
-            Categoria 2
+          <Link to="/categoria/spray" className="menu__opciones">
+            Sprays
           </Link>
         </ul>
         <CartWidget />

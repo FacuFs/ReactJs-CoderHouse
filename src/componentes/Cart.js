@@ -1,6 +1,8 @@
+import { app } from "firebase";
 import react from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../App.css"
 import { CartContextUse } from "./context/CartContext";
 
 
@@ -10,34 +12,36 @@ const Cart = () => {
     return (
         <>
             {carritoVacio ?
-                <div>
+                <div className="cartContainer">
                     <h2>El carrito esta vacio</h2>
-                    <Link to="/">volver al catalogo</Link>
+                    <Link className="btnDetalles" to="/">volver al catalogo</Link>
                 </div>
                 :
-                <>
+                <div className="cartContainer">
                     <h1>CARRITO</h1>
 
-                    <ul>
+                    <ul className="listaCart">
                         {cart.map(element => {
                             let precioProd = element.item.precio * element.cantidad;
                             
 
                             return (
                                 <li key={element.item.id}>
-                                    {element.item.nombre} - ${precioProd} ||| unidades: {element.cantidad} <button onClick={() => removeItem(element.item.id)}>Borrar</button>
+                                    <p>{element.item.nombre} - ${precioProd} </p> 
+                                    <p>Unidades: {element.cantidad}</p>
+                                    <button className="btnDetalles" onClick={() => removeItem(element.item.id)}>Borrar</button>
                                 </li>
                             )
                         })}
                     </ul>   
                     
 
-                    <button onClick={clearCart}>Vaciar Carrito</button>
+                    <button className="btnDetalles" onClick={clearCart}>Vaciar Carrito</button>
 
                     <h3>TOTAL: ${totalPrice}</h3>
 
-                    <Link to='/Form'>Finalizar compra</Link>
-                </>
+                    <Link className="btnDetalles" to='/Form'>Finalizar compra</Link>
+                </div>
 
             }
         </>

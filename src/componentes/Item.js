@@ -7,7 +7,6 @@ const Item = ({ item }) => {
 
     <div className="item">
       <h4>{item.nombre}</h4>
-      <h4>{item.id}</h4>
       <img src={item.img} className="item__img"></img>
       <p>{item.descripcion}</p>
       <p>Stock disponible: {item.stock}</p>

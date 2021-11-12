@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import { CartContextUse } from "./context/CartContext";
 import {getFirestore} from "../firebase/index";
+import "../App.css"
 
 const Form = () =>{
     const { carritoVacio, cart, clearCart, removeItem, totalPrice} = CartContextUse();
@@ -48,11 +49,12 @@ const Form = () =>{
 
     return(
         <>
-            <form onSubmit={handleSubmit} className='containerForm'> 
+            <form onSubmit={handleSubmit} className='containerForm'>
+
                 <input type='text' placeholder='Nombre' onChange={handleInputName}></input>
                 <input type='text' placeholder='Email' onChange={handleInputEmail}></input>
                 <input type='number' placeholder='Telefono' onChange={handleInputTel}></input>
-                <button type='submit'>Enviar</button>
+                <button className="btnDetalles" type='submit'>Enviar</button>
             </form>
         </>
     )
